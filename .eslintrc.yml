@@ -1,0 +1,17 @@
+---
+
+# https://eslint.org/docs/user-guide/configuring#specifying-environments
+env:
+  node: true
+
+# https://github.com/babel/babel-eslint
+parser: babel-eslint
+
+extends:
+  - 'airbnb-base'
+
+rules:
+  no-console: 0
+  linebreak-style: 0
+  global-require: 0
+  eslint linebreak-style: [0, "error", "windows"]

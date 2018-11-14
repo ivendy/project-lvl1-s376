@@ -2,9 +2,16 @@
   "name": "bgbamby",
   "version": "1.0.1",
   "description": "brain games",
-  "main": "dist/bin/brain-games.js",
+  "keywords": [
+    "console game",
+    "brain games"
+  ],
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ivendy/project-lvl1-s376"
   },
   "files": [
     "dist"
@@ -21,7 +28,11 @@
     "@babel/core": "^7.1.5",
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.1.5",
-    "cross-env": "^5.2.0"
+    "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
   },
   "dependencies": {
     "readline-sync": "^1.4.9"
