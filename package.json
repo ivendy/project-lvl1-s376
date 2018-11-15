@@ -1,6 +1,6 @@
 {
   "name": "bgbamby",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "brain games",
   "keywords": [
     "console game",
@@ -9,7 +9,8 @@
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
-    "brain-calc": "dist/bin/brain-calc.js"
+    "brain-calc": "dist/bin/brain-calc.js",
+    "brain-calc": "dist/bin/brain-gcd.js"
   },
   "repository": {
     "type": "git",
