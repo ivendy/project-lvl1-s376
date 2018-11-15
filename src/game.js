@@ -55,7 +55,8 @@ export default (game) => {
       score += 1;
       if (game === 'gcd') console.log('\nCorrect!');
     } else {
-      console.log(`${answer} is wrong answer;(. Correct answer is ${rightAnswer}. \nLet's try again, ${userName}!`); return; // showFailMessage
+      console.log(`${answer} is wrong answer;(. Correct answer is ${rightAnswer}. \nLet's try again, ${userName}!`);
+      return; // showFailMessage
     }
     if (score === victoryScore) {
       console.log(`\nCongratulations, ${userName}!`); return; // showVictoryMessage
