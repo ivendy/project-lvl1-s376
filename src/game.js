@@ -3,6 +3,7 @@
 import playEven from './games/even';
 import playCalc from './games/calc';
 import playGcd from './games/gcd';
+import playProg from './games/progression';
 
 const readlineSync = require('readline-sync');
 
@@ -23,6 +24,10 @@ const showRules = (game) => {
       console.log('What is the result of the expression?');
       break;
     }
+    case 'prog': {
+      console.log('What number is missing in the progression?');
+      break;
+    }
     default: {
       console.log('Find the greatest common divisor of given numbers.');
     }
@@ -36,6 +41,9 @@ const makeRound = (game) => {
     }
     case 'calc': {
       return playCalc();
+    }
+    case 'prog': {
+      return playProg();
     }
     default: {
       return playGcd();
@@ -53,7 +61,7 @@ export default (game) => {
     const answer = readlineSync.question('Your answer: ');
     if (answer === rightAnswer) {
       score += 1;
-      if (game === 'gcd') console.log('\nCorrect!');
+      if ((game === 'gcd') || (game === 'prog')) console.log('\nCorrect!');
     } else {
       console.log(`${answer} is wrong answer;(. Correct answer is ${rightAnswer}. \nLet's try again, ${userName}!`);
       return; // showFailMessage
