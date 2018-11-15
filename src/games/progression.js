@@ -6,7 +6,7 @@ export default () => {
   let progression = '';
   for (let i = 0; i < lengthOfProgression; i += 1) {
     if (i === hidedNumber) {
-      progression += ' .. ';
+      progression += '.. ';
     } else {
       progression += `${startNumber + (step * i)} `;
     }
