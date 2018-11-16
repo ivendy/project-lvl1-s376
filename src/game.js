@@ -1,27 +1,30 @@
-// это типа движок. он вызывается с названием игры. вызывает
-// функцию для этой игры и возвращает ответ да-нет
+const readlineSync = require('readline-sync');
 
-export default (greetingUser, showRules, makeRound, getAnswer, showCorrectAnswerMessage,
-  showWrongAnswerMessage, showVictoryMessage) => {
+export default (getRules, makeRound) => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hi ${userName}!\n`);
+  const gameRules = getRules();
+  console.log(`${gameRules}`);
+
   const victoryScore = 3;
-  const userName = greetingUser();
-  showRules();
   let score = 0;
   while (score < victoryScore) {
-    const rightAnswer = makeRound(score);
-    const answer = getAnswer(); // readlineSync.question('Your answer: ');
+    const questionAndAnswer = makeRound();
+    const question = questionAndAnswer[0];
+    console.log(`\nQuestion: ${question}`);
+    const rightAnswer = questionAndAnswer[1];
+    const answer = readlineSync.question('Your answer: ');
     if (answer === rightAnswer) {
       score += 1;
-      showCorrectAnswerMessage();
+      console.log('\nCorrect!');
     } else {
-      showWrongAnswerMessage(answer, rightAnswer, userName);
-      // console.log(`${answer} is wrong answer;(. Correct answer is ${rightAnswer}.
-      // \nLet's try again, ${userName}!`);
+      console.log(`\n${answer} is wrong answer;(. Correct answer is ${rightAnswer}.
+       \nLet's try again, ${userName}!`);
       return;
     }
     if (score === victoryScore) {
-      showVictoryMessage(userName);
-      // console.log(`\nCongratulations, ${userName}!`);
+      console.log(`\nCongratulations, ${userName}!`);
       return;
     }
   }
