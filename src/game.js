@@ -67,7 +67,8 @@ export default (game) => {
       return; // showFailMessage
     }
     if (score === victoryScore) {
-      console.log(`\nCongratulations, ${userName}!`); return; // showVictoryMessage
+      console.log(`\nCongratulations, ${userName}!`);
+      return; // showVictoryMessage
     }
   }
 };
