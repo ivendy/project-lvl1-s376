@@ -1,12 +1,14 @@
 import makeGame from '../game';
+import generateNum from '../utils';
 
-const getRules = () => 'What is the result of the expression?';
+const Rules = 'What is the result of the expression?';
+
+const operation = ['+', '-', '*'];
 
 const makeRound = () => {
-  const number1 = Math.floor(Math.random() * 10);
-  const number2 = Math.floor(Math.random() * 10);
-  const i = Math.floor(Math.random() * 3);
-  const operation = ['+', '-', '*'];
+  const number1 = generateNum(0, 10);
+  const number2 = generateNum(0, 10);
+  const i = generateNum(0, 3);
   const sign = operation[i];
   const question = `${number1} ${sign} ${number2} = ?`;
   const findAnswer = () => {
@@ -27,5 +29,5 @@ const makeRound = () => {
 };
 
 export default () => {
-  makeGame(getRules, makeRound);
+  makeGame(Rules, makeRound);
 };

@@ -1,13 +1,15 @@
 import makeGame from '../game';
+import generateNum from '../utils';
+
+const isEven = number => number % 2 === 0;
 
 const makeRound = () => {
-  const question = Math.floor(Math.random() * 100);
-  const isEven = number => ((number % 2) ? 'no' : 'yes');
-  return [question, isEven(question)];
+  const question = generateNum(0, 100);
+  return [question, isEven(question) ? 'yes' : 'no'];
 };
 
-const getRules = () => 'Answer "yes" if number is even, otherwise answer "no".';
+const Rules = 'Answer "yes" if number is even, otherwise answer "no".';
 
 export default () => {
-  makeGame(getRules, makeRound);
+  makeGame(Rules, makeRound);
 };
