@@ -5,11 +5,12 @@ const isEven = number => number % 2 === 0;
 
 const makeRound = () => {
   const question = generateNum(0, 100);
-  return [question, isEven(question) ? 'yes' : 'no'];
+  const answer = isEven(question) ? 'yes' : 'no';
+  return [question, answer];
 };
 
-const Rules = 'Answer "yes" if number is even, otherwise answer "no".';
+const description = 'Answer "yes" if number is even, otherwise answer "no".';
 
 export default () => {
-  makeGame(Rules, makeRound);
+  makeGame(description, makeRound);
 };

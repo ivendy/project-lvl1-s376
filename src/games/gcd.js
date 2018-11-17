@@ -17,8 +17,8 @@ const makeRound = () => {
   return [question, String(greatestCommonDivisor)];
 };
 
-const Rules = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
 export default () => {
-  makeGame(Rules, makeRound);
+  makeGame(description, makeRound);
 };

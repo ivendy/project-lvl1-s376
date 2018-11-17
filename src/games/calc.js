@@ -1,7 +1,7 @@
 import makeGame from '../game';
 import generateNum from '../utils';
 
-const Rules = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const operation = ['+', '-', '*'];
 
@@ -29,5 +29,5 @@ const makeRound = () => {
 };
 
 export default () => {
-  makeGame(Rules, makeRound);
+  makeGame(description, makeRound);
 };
