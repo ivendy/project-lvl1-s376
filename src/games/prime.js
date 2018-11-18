@@ -13,7 +13,7 @@ const isPrime = (number) => {
 
 const makeRound = () => {
   const question = generateNum(2, 1000);
-  const answer = isPrime(question) ? 'yes' : 'no';  
+  const answer = isPrime(question) ? 'yes' : 'no';
   return [question, answer];
 };
 
